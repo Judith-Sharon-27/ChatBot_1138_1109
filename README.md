@@ -1,4 +1,4 @@
-# Sanskrit Fluency Bot 🌺
+# Sanskrit Fluency Bot 
 
 Multilingual Sanskrit-learning chatbot.
 
