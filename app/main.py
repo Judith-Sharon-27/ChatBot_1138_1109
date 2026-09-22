@@ -1,6 +1,6 @@
 import streamlit as st
-from .language import LANGUAGES
-from .engine import SanskritBot,PHRASES
+from app.language import LANGUAGES
+from app.engine import SanskritBot,PHRASES
 st.set_page_config(page_title="Sanskrit Fluency Bot",page_icon="🌺",layout="wide")
 if "bot" not in st.session_state:st.session_state.bot=SanskritBot()
 if "chat" not in st.session_state:st.session_state.chat=[]
