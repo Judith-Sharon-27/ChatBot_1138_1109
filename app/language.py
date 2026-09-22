@@ -1,0 +1,1 @@
+LANGUAGES={"English":{"native":"English"},"Telugu":{"native":"తెలుగు"},"Tamil":{"native":"தமிழ்"},"Kannada":{"native":"ಕನ್ನಡ"},"Malayalam":{"native":"മലയാളം"},"Hindi":{"native":"हिन्दी"},"Bengali":{"native":"বাংলা"},"Marathi":{"native":"मराठी"},"Gujarati":{"native":"ગુજરાતી"},"Punjabi":{"native":"ਪੰਜਾਬੀ"},"Odia":{"native":"ଓଡ଼ିଆ"}}
