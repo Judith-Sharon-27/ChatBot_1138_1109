@@ -1,20 +1,8 @@
-"""Virtual keyboards and English-phonetic input for Indian scripts."""
+"""Virtual keyboards and lightweight English-phonetic input for Indian scripts.
 
-from indic_transliteration import sanscript
-
-SCRIPT_TARGETS = {
-    "English": None,
-    "Telugu": sanscript.TELUGU,
-    "Tamil": sanscript.TAMIL,
-    "Kannada": sanscript.KANNADA,
-    "Malayalam": sanscript.MALAYALAM,
-    "Hindi": sanscript.DEVANAGARI,
-    "Bengali": sanscript.BENGALI,
-    "Marathi": sanscript.DEVANAGARI,
-    "Gujarati": sanscript.GUJARATI,
-    "Punjabi": sanscript.GURMUKHI,
-    "Odia": sanscript.ORIYA,
-}
+This module intentionally uses only the Python standard library so the chatbot
+can run in restricted Windows and Docker environments without native DLLs.
+"""
 
 KEYBOARD_ROWS = {
     "Telugu": ["అ ఆ ఇ ఈ ఉ ఊ ఎ ఏ ఐ ఒ ఓ ఔ", "క ఖ గ ఘ ఙ చ ఛ జ ఝ ఞ", "ట ఠ డ ఢ ణ త థ ద ధ న", "ప ఫ బ భ మ య ర ల వ శ ష స హ", "ా ి ీ ు ూ ె ే ై ొ ో ౌ ం ః ్"],
@@ -29,14 +17,37 @@ KEYBOARD_ROWS = {
     "Odia": ["ଅ ଆ ଇ ଈ ଉ ଊ ଏ ଐ ଓ ଔ", "କ ଖ ଗ ଘ ଙ ଚ ଛ ଜ ଝ ଞ", "ଟ ଠ ଡ ଢ ଣ ତ ଥ ଦ ଧ ନ", "ପ ଫ ବ ଭ ମ ଯ ର ଲ ଵ ଶ ଷ ସ ହ", "ା ି ୀ ୁ ୂ େ ୈ ୋ ୌ ଂ ଃ ୍"],
 }
 
+# Basic phonetic mappings used by the UI preview. This is deliberately small
+# and dependency-free; the virtual keyboard remains the reliable input method.
+_TELUGU = {
+    "aa":"ఆ","ii":"ఈ","uu":"ఊ","ai":"ఐ","au":"ఔ","a":"అ","i":"ఇ","u":"ఉ","e":"ఎ","o":"ఒ",
+    "kh":"ఖ","gh":"ఘ","ch":"చ","jh":"ఝ","th":"థ","dh":"ధ","ph":"ఫ","bh":"భ",
+    "k":"క","g":"గ","c":"చ","j":"జ","t":"త","d":"ద","n":"న","p":"ప","b":"బ","m":"మ",
+    "y":"య","r":"ర","l":"ల","v":"వ","w":"వ","s":"స","h":"హ",
+}
+
 def transliterate_english(text: str, language: str) -> str:
-    target = SCRIPT_TARGETS.get(language)
-    if not target or not text.strip():
+    if not text.strip() or language == "English":
         return text
-    try:
-        return sanscript.transliterate(text, sanscript.ITRANS, target)
-    except Exception:
+    if language != "Telugu":
         return text
+
+    result = []
+    i = 0
+    lower = text.lower()
+    keys = sorted(_TELUGU, key=len, reverse=True)
+    while i < len(text):
+        matched = False
+        for key in keys:
+            if lower.startswith(key, i):
+                result.append(_TELUGU[key])
+                i += len(key)
+                matched = True
+                break
+        if not matched:
+            result.append(text[i])
+            i += 1
+    return "".join(result)
 
 def keyboard_rows(language: str):
     return KEYBOARD_ROWS.get(language, [])
