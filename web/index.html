@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f4ec">
+  <title>BhashaSetu — Learn any language, your way</title>
+  <meta name="description" content="A multilingual AI language-learning companion for Indian languages and Sanskrit. Chat, speak, translate and learn together.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="BhashaSetu home"><span class="brand-mark">भा</span><span>Bhasha<span class="brand-light">Setu</span></span></a>
+    <nav class="nav-links"><a href="#learn">Learn</a><a href="#conversation">Conversation</a><a href="#how">How it works</a></nav>
+    <div class="top-actions"><span class="online-dot"></span><span class="status-label">Your language, your pace</span><button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">⚙</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✳</span> LANGUAGE HAS NO BORDERS</div>
+        <h1>Every language<br>opens <em>a new world.</em></h1>
+        <p class="hero-sub">Learn Sanskrit or explore a new language—with an AI companion that meets you in the language you know.</p>
+        <div class="hero-buttons"><a class="primary-btn" href="#learn">Start learning <span>↗</span></a><a class="text-btn" href="#conversation"><span class="play-icon">▶</span> Try a conversation</a></div>
+        <div class="hero-proof"><div class="avatar-stack"><span>అ</span><span>अ</span><span>அ</span><span>ಕ</span></div><span>Made for the many voices of India</span></div>
+      </div>
+      <div class="hero-art" aria-label="Language learning illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="language-bubble bubble-telugu">తెలుగు <small>Telugu</small></div>
+        <div class="language-bubble bubble-hindi">नमस्ते <small>Hindi</small></div>
+        <div class="language-bubble bubble-tamil">வணக்கம் <small>Tamil</small></div>
+        <div class="language-bubble bubble-sanskrit">नमः <small>Sanskrit</small></div>
+        <div class="hero-center"><span class="center-sun">✳</span><span class="center-script">अ आ इ ई</span><strong>One India.<br>Many languages.</strong><small>Learn • Speak • Connect</small></div>
+        <span class="spark spark-a">✦</span><span class="spark spark-b">✳</span><span class="spark spark-c">✧</span>
+      </div>
+    </section>
+    <section class="language-strip"><span class="strip-label">YOUR VOICE, YOUR LANGUAGE</span><div class="language-pills"><span>हिन्दी</span><span>తెలుగు</span><span>தமிழ்</span><span>ಕನ್ನಡ</span><span>മലയാളം</span><span>বাংলা</span><span>मराठी</span><span>ગુજરાતી</span><span>ਪੰਜਾਬੀ</span><span>ଓଡ଼ିଆ</span><span>অসমীয়া</span><span>اردو</span><span>English</span></div></section>
+    <section class="workspace" id="learn">
+      <div class="section-heading"><div><div class="eyebrow">YOUR PERSONAL LANGUAGE STUDIO</div><h2>What would you like to do?</h2></div><span class="tiny-note"><span class="online-dot"></span> Switch languages anytime</span></div>
+      <div class="mode-tabs" role="tablist"><button class="mode-tab active" data-mode="learn" role="tab" aria-selected="true"><span>✳</span> Learn a language</button><button class="mode-tab" data-mode="chat" role="tab" aria-selected="false"><span>☏</span> Free conversation</button><button class="mode-tab" data-mode="translate" role="tab" aria-selected="false"><span>⇄</span> Translate & understand</button></div>
+      <div class="studio-grid">
+        <aside class="setup-panel">
+          <div class="panel-kicker">01 — MAKE IT YOURS</div><h3>Your language journey</h3><p class="muted">Choose what feels familiar and what you want to learn.</p>
+          <label for="nativeLang">I speak / understand</label><div class="select-wrap"><span>🌿</span><select id="nativeLang"><option value="te">తెలుగు · Telugu</option><option value="hi">हिन्दी · Hindi</option><option value="ta">தமிழ் · Tamil</option><option value="kn">ಕನ್ನಡ · Kannada</option><option value="ml">മലയാളം · Malayalam</option><option value="bn">বাংলা · Bengali</option><option value="mr">मराठी · Marathi</option><option value="gu">ગુજરાતી · Gujarati</option><option value="pa">ਪੰਜਾਬੀ · Punjabi</option><option value="or">ଓଡ଼ିଆ · Odia</option><option value="as">অসমীয়া · Assamese</option><option value="ur">اردو · Urdu</option><option value="en">English</option><option value="sa">संस्कृतम् · Sanskrit</option></select></div>
+          <div class="swap-row"><span>Comfort language</span><span class="swap-line"></span><button id="swapBtn" class="swap-btn" title="Swap languages">↕</button></div>
+          <label for="targetLang">I want to learn</label><div class="select-wrap target-select"><span>✦</span><select id="targetLang"><option value="sa">संस्कृतम् · Sanskrit</option><option value="te">తెలుగు · Telugu</option><option value="hi">हिन्दी · Hindi</option><option value="ta">தமிழ் · Tamil</option><option value="kn">ಕನ್ನಡ · Kannada</option><option value="ml">മലയാളം · Malayalam</option><option value="bn">বাংলা · Bengali</option><option value="mr">मराठी · Marathi</option><option value="gu">ગુજરાતી · Gujarati</option><option value="pa">ਪੰਜਾਬੀ · Punjabi</option><option value="or">ଓଡ଼ିଆ · Odia</option><option value="as">অসমীয়া · Assamese</option><option value="ur">اردو · Urdu</option><option value="en">English</option></select></div>
+          <div class="level-label">YOUR LEVEL</div><div class="level-options" role="group" aria-label="Learning level"><button class="level-choice active" data-level="beginner">Beginner</button><button class="level-choice" data-level="intermediate">Some basics</button><button class="level-choice" data-level="advanced">Advanced</button></div>
+          <div class="goal-card"><span class="goal-icon">✧</span><div><strong id="goalTitle">Start with the basics</strong><p id="goalDesc">Simple words, useful phrases and gentle practice.</p></div></div>
+        </aside>
+        <section class="chat-panel" id="conversation">
+          <div class="chat-top"><div class="tutor-avatar">भा<span class="avatar-star">✦</span></div><div class="tutor-meta"><strong>Your Bhasha buddy</strong><span><span class="online-dot"></span> Ready to practise with you</span></div><div class="chat-top-actions"><button id="clearBtn" class="small-icon-btn" title="Clear conversation" aria-label="Clear conversation">↺</button><button id="voiceToggle" class="voice-toggle active" aria-pressed="true">🔊 Voice on</button></div></div>
+          <div class="chat-mode-banner"><span id="modeIcon">✳</span><div><strong id="modeTitle">Let's learn together</strong><small id="modeDescription">I'll explain in your language, then help you practise the language you're learning.</small></div></div>
+          <div id="messages" class="messages" aria-live="polite">
+            <div class="message-row bot-row"><div class="mini-avatar">भा</div><div class="message-content"><div class="message-bubble"><p id="welcomeText">నమస్కారం! 👋 మనం కలిసి సంస్కృతం నేర్చుకుందాం. ఈ రోజు ఎలా ఉన్నారు?</p><div class="translation-block"><span class="translation-label">SANSKRIT PRACTICE</span><p id="welcomeTarget">नमस्ते! भवान् कथम् अस्ति?</p><button class="speak-inline" data-speak-target="welcomeTarget" title="Listen">🔊 Listen</button></div></div><span class="message-time">Your language + learning language</span></div></div>
+            <div class="suggestions" id="suggestions"><button class="suggestion">Teach me how to introduce myself</button><button class="suggestion">Let's practise greetings</button><button class="suggestion">How do I say “thank you”?</button></div>
+          </div>
+          <div class="keyboard-panel" id="keyboardPanel"><div class="keyboard-head"><span>⌨ <strong>Language keyboard</strong></span><span class="keyboard-hint">Tap letters to insert</span><button id="keyboardToggle" class="keyboard-close" aria-label="Toggle keyboard">−</button></div><div class="script-switch"><button class="script-btn active" data-script="native">తెలుగు script</button><button class="script-btn" data-script="latin">English → తెలుగు</button></div><div id="virtualKeys" class="virtual-keys"></div></div>
+          <form id="chatForm" class="composer"><button type="button" id="micBtn" class="mic-btn" title="Speak your message" aria-label="Speak your message">🎙</button><textarea id="messageInput" rows="1" placeholder="Type in English or your language…" aria-label="Your message"></textarea><button type="button" id="keyboardBtn" class="keyboard-btn" title="Open language keyboard" aria-label="Open language keyboard">⌨</button><button type="submit" class="send-btn" aria-label="Send message">↑</button></form>
+          <div class="composer-foot"><span id="inputHint">Type naturally in Telugu, English, or mix both.</span><span>Enter ↵ to send</span></div>
+        </section>
+      </div>
+      <div class="feature-row"><div><span class="feature-icon">🎙</span><div><strong>Talk naturally</strong><p>Practise speaking, not just typing.</p></div></div><div><span class="feature-icon">⌨</span><div><strong>Type your way</strong><p>Use a script keyboard or transliteration.</p></div></div><div><span class="feature-icon">↔</span><div><strong>Understand both sides</strong><p>See the new language and its meaning.</p></div></div><div><span class="feature-icon">✦</span><div><strong>Learn anything</strong><p>Ask questions, explore grammar, make mistakes.</p></div></div></div>
+    </section>
+    <section class="how-section" id="how"><div class="eyebrow">A LITTLE EVERY DAY</div><h2>From “namaste” to <em>conversation.</em></h2><div class="steps"><article><span>01</span><h3>Choose your languages</h3><p>Start with your mother tongue, then pick Sanskrit or another Indian language.</p></article><article><span>02</span><h3>Chat or speak freely</h3><p>Use your voice, native script or English transliteration—whichever is easiest.</p></article><article><span>03</span><h3>Learn in context</h3><p>Get explanations in your familiar language, examples in your target language, and practice at your pace.</p></article></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">भा</span><span>Bhasha<span class="brand-light">Setu</span></span></a><span>Built for every voice. Made for curious minds.</span><span class="footer-right">भारत की भाषाएँ, सबके लिए ✦</span></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body></html>
